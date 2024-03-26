@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+
+:root{
+    --font-size: 12vw;
+    --led-color:rgb(28, 41, 187);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /*font-family: "Rubik 80s Fade", system-ui;*/
+  font-family: "Codystar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(2, 0, 20);
+}
+
+h1{
+    font-size: var(--font-size);
+    color: white;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        color: white;
+        text-shadow: 
+        0 0 10px var(--led-color),
+        0 0 20px var(--led-color),
+        0 0 30px var(--led-color),
+        0 0 40px var(--led-color),
+        0 0 50px var(--led-color),
+        0 0 60px var(--led-color),
+        0 0 70px var(--led-color),
+        0 0 80px var(--led-color);
+    }
+    100% {
+        color: white;
+        text-shadow: 
+        0 0 10px var(--led-color),
+        0 0 20px var(--led-color),
+        0 0 30px var(--led-color),
+        0 0 40px var(--led-color),
+        0 0 50px var(--led-color),
+        0 0 60px var(--led-color),
+        0 0 70px var(--led-color),
+        0 0 80px var(--led-color),
+        0 1 90px var(--led-color);
+    }
+}

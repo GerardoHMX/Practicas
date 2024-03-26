@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom inputs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
+    <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
+</head>
+
+<body>
+    <div class="form-container">
+
+        <form class="dynamic-form">
+
+            <dark-mode-toggle id="dark-mode-toggle-1" legend="" appearance="switch" dark="  " light="  "></dark-mode-toggle>
+
+            <div class="md entryArea">
+                <input type="text" required maxlength="40">
+                <label for="">Text custom input</label>
+                <a class="icon"><i class="ion-md-trash"></i></a>
+            </div>
+    
+            <div class="md entryArea">
+                <input type="number" required maxlength="40">
+                <label for="">Number custom input</label>
+            </div>
+
+            <div class="md">
+                <label for="text-input">Text Input</label>
+                <input class="input" id="text-input" type="text" />
+            </div>
+            <div class="md">
+                <label for="textarea">Textarea</label>
+                <textarea class="input" id="textarea"></textarea>
+            </div>
+            <div class="md">
+                <label for="number-input">Number Input</label>
+                <input class="input" id="number-input" type="number" />
+            </div>
+            <div class="md">
+                <label for="email-input">Email Input</label>
+                <input class="input" id="email-input" type="email" />
+            </div>
+            <div class="md">
+                <label for="password-input">Password Input</label>
+                <input class="input" id="password-input" type="password" />
+            </div>
+            <div class="md">
+                <label>Password Input</label>
+                <input type="checkbox" id="show-password" /> 
+                <div class="password">
+                    <div class="back"></div>
+                    <input type="text" id="password" placeholder="Password" autocomplete="off"/>
+                    <label for="show-password"></label> 
+                </div>
+            </div>
+            <div class="md">
+                <label for="checkbox" class="control">
+                    <input class="input" id="checkbox" type="checkbox" />
+                    Checkbox
+                </label>
+            </div>
+            <div class="md">
+                <label for="radio1" class="control">
+                    <input class="input" id="radio1" type="radio" name="options" />
+                    Radio 1
+                </label>
+                <label for="radio2" class="control">
+                    <input class="input" id="radio2" type="radio" name="options" />
+                    Radio 2
+                </label>
+            </div>
+            <div class="md">
+                <label for="select">Select</label>
+                <select class="input">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <hr/>
+                    <option value="option3">Option 3</option>
+                    <option value="option3">Option 4</option>
+                </select>
+            </div>
+            <div class="md">
+                <label for="file">File</label>
+                <input class="input" id="file" type="file" />
+            </div>
+            <div class="md">
+                <label for="url">URL</label>
+                <input class="input" id="url" type="url" />
+            </div>
+            <div class="md">
+                <label for="date">Date</label>
+                <input class="input" id="date" type="date" />
+            </div>
+            <div class="md">
+                <label for="time">Time</label>
+                <input class="input" id="time" type="time" />
+            </div>
+            <div class="md">
+                <label for="datetime-local">Datetime-local</label>
+                <input class="input" id="datetime-local" type="datetime-local" />
+            </div>
+            <div class="md">
+                <label for="month">Month</label>
+                <input class="input" id="month" type="month" />
+            </div>
+            <div class="md">
+                <label for="week">Week</label>
+                <input class="input" id="week" type="week" />
+            </div>
+            <div class="md">
+                <label for="range">Range</label>
+                <input class="input" id="range" type="range" />
+            </div>
+            <div class="md">
+                <label for="color">Color</label>
+                <input class="input" id="color" type="color" />
+            </div>
+
+            <a href="javascript:;" class="button">Button Link</a>
+
+            <button type="button" class="button">Real Button</button>
+
+            <button class="button">
+                <i class="icon"></i>
+                Button with Icon
+            </button>
+ 
+        </form>
+    </div>
+</body>
+
+</html>

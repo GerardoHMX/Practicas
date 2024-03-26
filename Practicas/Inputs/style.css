@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    color-scheme: light dark;
+    /* Grid Variables */
+    --with-border: 2px;
+    --input-height: 40px;
+    --input-width: 100%;
+    --default-radius: 4px;
+    --size-option:30px;
+}
+
+* {
+    font-family: "Montserrat", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+    font-size: max(14px, 1em);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--primary);
+    background-color: var(--light);
+}
+
+.sm {
+    width: 150px;
+}
+
+.md {
+    width: 300px;
+}
+
+.lg {
+    width: 450px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.dynamic-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.dynamic-form>* {
+    flex: 1;
+}
+
+.sidebar,
+.article {
+    overscroll-behavior: contain;
+}
+
+label {
+    padding-left: 6px;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    vertical-align: center;
+    position: relative;
+    top: -1px;
+    overflow: hidden;
+    background-color: var(--light);
+}
+
+input[type="file"] {
+    font-size: 0.9em;
+    padding-top: 0.35rem;
+}
+
+.input {
+    height: var(--input-height);
+    width: var(--input-width);
+    padding: 0.25em 0.5em;
+    border: var(--with-border) solid var(--input-border);
+    border-radius: var(--default-radius);
+    transition: 20ms box-shadow ease-in-out;
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.input:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+}
+
+.input[readonly] {
+    border-style: dotted;
+    cursor: not-allowed;
+    color: var(--input-disabled);
+}
+
+.input[disabled] {
+    --input-border: var(--input-disabled);
+    background-color: var(--backgroud-disabled);
+    cursor: not-allowed;
+}
+
+textarea.input {
+    resize: vertical;
+    background-color: var(--light);
+}
+
+.control {
+    line-height: 1.8;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 1.6em;
+    margin: 0.5em 0;
+}
+
+input[type="checkbox"] {
+    border: var(--with-border) solid var(--input-border);
+    border-radius: var(--default-radius);
+}
+
+input[type="radio"] {
+    border: var(--with-border) solid var(--input-border);
+    border-radius: 50%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    height: var(--size-option);
+    width: var(--size-option);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--light);
+    margin: 0;
+    display: grid;
+    place-content: center;
+    font: inherit;
+    color: currentColor;
+    transform: translateY(-0.075em);
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    transform: scale(0);
+    transition: 20ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    transform-origin: bottom left;
+    clip-path: circle(50% at 50% 50%)
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    transform: scale(0);
+    transition: 20ms transform ease-in-out;
+    border: var(--form-control-color) solid .8em;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+
+input[type="image"]::before {
+    content: '';
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.button {
+    border: var(--with-border) solid var(--input-border);
+    font-weight: 400;
+    border-radius: var(--default-radius);
+    padding: 0.25em 0.75em;
+    text-align: center;
+    height: var(--input-height);
+    width: var(--input-width);
+    cursor: pointer;
+}
+
+.button:where(:has(.icon)) {
+    display: flex;
+    gap: 0.5em;
+}
+
+a.button {
+    align-items: center;
+    text-decoration: none;
+}
+
+button.button {
+    @media screen and (-ms-high-contrast: active) {
+        border: var(--with-border) solid currentcolor;
+    }
+}
+
+a.button,
+button.button {
+    background-color: var(--accent--alt);
+    min-width: 10ch;
+    min-height: 44px;
+    line-height: 1.1;
+}
+
+a.button,
+button.button {
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:active {
+        background-color: var(--button-bg);
+        --button-color: var(--primary);
+        transition: 220ms all ease-in-out;
+    }
+
+    &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        background-color: var(--button-bg);
+        --button-color: var(--primary);
+    }
+
+    &--small {
+        font-size: 1.15rem;
+    }
+}
+
+/********/
+
+.entryArea {
+    position: relative;
+    margin: 15px 0;
+}
+
+.entryArea label {
+    width: var(--input-width);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: var(--primary);
+    transition: .5s;
+    padding: 0 5px;
+    pointer-events: none;
+}
+
+.entryArea input {
+    width: var(--input-width);
+    height: var(--input-height);
+    background: transparent;
+    padding: 0 10px;
+    color: var(--primary);
+    top: 0;
+    left: 0;
+    border: var(--with-border) solid var(--input-border); 
+    border-radius: 5px;
+    outline: none;
+}
+
+.entryArea input:focus~label,
+.entryArea input:valid~label {
+    top: -10px;
+    background: transparent;
+}
+
+.entryArea .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s;
+    color: var(--primary);
+    font-size: 1em;
+    padding: 0 6px;
+    pointer-events: none;
+}
+
+.password {
+    height: var(--input-height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: var(--with-border) solid var(--input-border); 
+    border-radius: var(--default-radius);
+}
+
+.password #password {
+    width: var(--input-width);
+    box-sizing: border-box;
+    padding: 0px 32px 0px 16px;
+    border: none;
+    outline: none;
+    color: var(--primary);
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    -webkit-text-security: disc;
+    -moz-text-security: disc;
+}
+
+.password ::placeholder {
+    color: var(--primary);
+}
+
+.password #password ::placeholder {
+    color: var(--primary);
+}
+
+#show-password {
+    display: none;
+}
+
+.password label {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 15px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.2em;
+}
+
+.password label::before {
+    position: absolute;
+    content: "visibility_off";
+    font-family: "Material Icons";
+    font-size: 0.8em;
+    width: 15px;
+    height: 25px;
+    line-height: 25px;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: var(--primary);
+    transition: 0.25s;
+}
+
+.back {
+    width: 10px;
+}
+
+.password::after {
+    position: absolute;
+    content: "lock";
+    font-family: "Material Icons";
+    font-size: 0.9em;
+    top: 50%;
+    left: 6px;
+    transform: translate(0, -50%);
+    z-index: 1;
+    mix-blend-mode: difference;
+    filter: invert(var(--filter-color)) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+#show-password:checked+.password .back {
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    border-radius: 0;
+}
+
+#show-password:checked+.password #password {
+    -webkit-text-security: none;
+    -moz-text-security: none;
+}
+
+#show-password:checked+.password label::before {
+    content: "visibility";
+}

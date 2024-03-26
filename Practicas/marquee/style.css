@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-size: 10vw;
+  --with-size: 10vw;
+  --height-size: 8vh;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Grandstander", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: italic;
+  font-size: var(--font-size);
+  background-color: rgb(187, 172, 172);
+}
+
+.container {
+    padding: 1vh 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+} 
+
+.music-loader {
+    align-self: center;
+  position: relative;
+  width: var(--with-size);
+  height: var(--height-size);
+}
+
+.line {
+  width: 10px;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0;
+  background: linear-gradient(to bottom, purple, crimson);
+}
+
+.line1 {
+  left: 0;
+  animation: dance 0.5s ease alternate infinite;
+}
+.line2 {
+  left: 20px;
+  animation: dance 0.5s 0.2s ease alternate infinite;
+}
+
+.line3 {
+  left: 40px;
+  animation: dance 0.5s 0.4s ease alternate infinite;
+}
+
+@keyframes dance {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--height-size);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}

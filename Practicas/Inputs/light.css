@@ -1,0 +1,19 @@
+:root {
+    color-scheme: light;
+    /* Color Variables */
+    --input-focus-h: 220; 
+    --input-focus-s: 100%;
+    --input-focus-l: 32%; 
+    --input-border: #0375ff; 
+    --input-disabled: var(--secondary);
+    --background-disabled: #2c2c2c; 
+    --primary: #000000; 
+    --secondary: #999999; 
+    --light: #efefef;
+    --accent-alt: #6ba6ec; 
+    --button-bg: var(--input-border);
+    --accent: var(--input-border);
+    --form-control-color: var(--input-border);
+    --select-arrow: var(--input-border);
+    --filter-color: 100%;
+}

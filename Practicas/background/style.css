@@ -1,0 +1,59 @@
+:root{
+    --calculated-with:calc(100vw / 12 - 2px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px; 
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 2px 0; 
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(152,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(100%);
+  }
+}
+
+span {
+  position: relative;
+  display: block;
+  width: var(--calculated-with);
+  height: var(--calculated-with);
+  background-color: rgb(43, 43, 43);
+  transition: .5s;
+}
+
+span:hover {
+  background-color: rgb(255, 2, 2);
+    transition: .05s;
+}

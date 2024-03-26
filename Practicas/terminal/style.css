@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+
+:root {
+    --font-size: 14px;
+    --font-color:#56b5c1;
+    --border-color: #767c87;
+    --terminal-color:#282c34;
+    --prompt-color:#1a1d24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: var(--font-size);
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(234, 233, 238);
+    font-size: var(--font-size);
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typeAndDelete {
+    0%,
+    10% {        
+        width: 8em;
+    }
+
+    45%,
+    50% {
+        width: 6.2em;
+    }
+
+    90%,
+    100% {
+        width: 0;
+    }
+}
+
+.terminal {
+    border: 0.12em solid var(--border-color);
+    background-color: var(--terminal-color);
+    color: var(--font-color);
+    border-radius: 0.5em;
+    padding: 1.5em 0.5em 0.5em 0.5em;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    width: 50vw;
+    cursor: pointer;
+}
+
+.terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--terminal-color);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding: 0 0.4em;
+    color: white;
+    text-align: center;
+}
+
+.terminal-controls {
+    float: right;
+    margin-right: 0.1em;
+    padding: 0.1em 0;
+}
+
+.control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.control.close {
+    background-color: #ff5f57;
+}
+
+.control.minimize {
+    background-color: #febc2e;
+}
+
+.control.maximize {
+    background-color: #27c840;
+}
+
+.terminal-title {
+    display: inline-block;
+    padding: 0.4em 0;
+}
+
+.terminal-title span {
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        white, 
+        #a4d9e0, 
+        #e9d9b8,
+        #b9ecc1,
+        #d6cfee,
+        #f1d2ef
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.terminal-body {
+    background-color: var(--prompt-color);
+    cursor: text;
+}
+
+.terminal-prompt {
+    padding: 1em 0.5em;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5em;
+}
+
+.root {
+    padding: 0;
+    display: inline-block;
+}
+
+
+.text {
+    padding: 0;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid var(--font-color);
+    animation:
+        typeAndDelete 4s steps(5) infinite,
+        blinkCursor 0.5s step-end infinite alternate;
+}
+
