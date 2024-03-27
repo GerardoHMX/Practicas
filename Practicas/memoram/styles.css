@@ -1,0 +1,80 @@
+body {
+    background-color: #26072d;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+body, html {
+    font-family: 'Oxanium', 'Ubuntu', sans-serif;
+    padding: 20px; 
+    background-color: #26072d;
+    justify-content: center;
+}  
+main{
+    width: 730px;
+    margin: 100px auto 50px;
+    display: flex;
+    align-items: center;
+}
+.section1{
+    background-color: rgba(255,255,255,0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+}
+h1{
+    text-align: center;
+}
+button{
+    height: 100px;
+    width: 100px;
+    font-size: 40px;
+    color: rgb(255, 230, 0);
+    font-weight: bold;
+}
+button:hover{
+    cursor: pointer;
+}
+.section2{
+    background-color: rgba(255,255,255,0.2);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 250px;
+    height: 400px;
+    padding: 0 20px;
+}
+.estadisticas{
+    border: 1px solid white;
+    height: 105px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+footer{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.neon-effect{
+    text-align: center;
+    color: #fdfafa; /* Color base del texto */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 5px #fff, /* Brillo base */
+      0 0 10px #ffb2b2, /* Brillo extendido */
+      0 0 20px #62fe2e, /* Color principal del neón */
+      0 0 30px #2E9AFE, /* Resplandor externo */
+      0 0 40px #2E9AFE,
+      0 0 70px #2E9AFE,
+      0 0 80px #2E9AFE;
+    animation: neon-animation 1.5s ease-in-out infinite alternate;
+}
+.neon-border {
+    border: 2px solid rgb(0, 255, 208);
+    border-radius: 10px;
+    padding: 20px;
+}
