@@ -1,0 +1,231 @@
+
+ body, html {
+  font-family: 'Oxanium', 'Ubuntu', sans-serif;
+  padding: 20px; 
+  background-color: #26072d;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+table { 
+  margin: 20px auto;
+}
+
+th, td {
+    padding: 8px;
+    border: 2px solid #c5f5f4;
+    box-shadow: 1px 1px 1px #055992;
+    border-radius: 10px; 
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #30d4d9;
+    text-shadow:
+    0 0 1px #d4f6f9, /* Brillo base */
+    0 0 3px #098293, /* Brillo extendido */
+    0 0 6px #0b487f;
+}
+th {
+  background: rgb(243 123 124 / 27%);
+  border-color: #fbcda0;
+  box-shadow: 1px 1px 1px rgb(206 105 83 / 31%);
+  color: #07d5fc;
+}
+
+.calendario {
+  border: 2px solid #30d4d9;
+  border-radius: 10px;
+  box-shadow: 8px 8px 8px #0e3aa0;
+  overflow: hidden; 
+  padding: 10px;
+}
+
+.dia-actual {
+  background-color: rgb(14 62 219 / 21%);
+  box-shadow: 8px 8px 8px #0e3aa0;
+  font-size: 18px;
+  animation: pulse 1s infinite;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px 20px;
+ 
+} 
+
+.material-symbols-outlined {
+  color: #30d4d9;
+  font-size: 30px;
+}
+
+.material-symbols-outlined:hover {
+  color: #95e3ff;
+}
+
+#movible {
+  width: 620px;
+  height: 500px;
+  background-color: #0c0f42;
+  position: absolute; /* Importante para poder moverlo */
+  cursor: pointer; /* Cambia el cursor cuando pasas sobre el div */
+}
+
+#mes, #año  {
+  color: #30d4d9;
+    text-shadow:
+    0 0 1px #d4f6f9, /* Brillo base */
+    0 0 3px #098293, /* Brillo extendido */
+    0 0 6px #0b487f;
+}
+
+.neon-effect {
+  text-align: center;
+  color: #fdfafa; /* Color base del texto */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 5px #fff, /* Brillo base */
+    0 0 10px #ffb2b2, /* Brillo extendido */
+    0 0 20px #62fe2e, /* Color principal del neón */
+    0 0 30px #2E9AFE, /* Resplandor externo */
+    0 0 40px #2E9AFE,
+    0 0 70px #2E9AFE,
+    0 0 80px #2E9AFE;
+  animation: neon-animation 1.5s ease-in-out infinite alternate;
+}
+
+/* Animación para el efecto parpadeante del neón */
+@keyframes neon-animation {
+  from {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #2E9AFE,
+      0 0 30px #2E9AFE,
+      0 0 40px #2E9AFE,
+      0 0 70px #2E9AFE,
+      0 0 80px #2E9AFE,
+  }
+  to {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #2E9AFE,
+      0 0 40px #2E9AFE,
+      0 0 50px #2E9AFE,
+      0 0 80px #2E9AFE,
+      0 0 90px #2E9AFE,
+  }
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.info {
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  gap: 10px;
+  height: 30px;
+  animation: move-info 5s linear infinite;
+  position: relative;
+}
+
+@keyframes move-info {
+  0% {
+    transform: translateX(-55%);
+  } 
+  100% {
+    transform: translateX(75%);
+  } 
+}
+
+.grid {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.colum1, .colum2 { 
+  padding: 10px; 
+}
+
+.colum2 {
+  align-self: center;
+}
+
+.image-container {
+  width: 100%; 
+  height: 480px; 
+  overflow: hidden; 
+
+  position: relative;
+  display: inline-block;
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Ajustar difuminado deseada */
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: inherit;
+  box-shadow: 0 0 20px 20px rgb(86, 3, 3); /* Ajusta el color y la extensión del difuminado */
+  border-radius: 8px; 
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;  
+
+  display: block; /* elimina el espacio extra en la parte inferior de la imagen */
+  border-radius: 8px;
+}
+
+.animate-icon {
+  transition: transform 0.3s ease-in-out;
+  animation: pulse 2s infinite;
+}
+
+.animate-icon:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.15);
+  }
+  100% {
+      transform: scale(1);
+  }
+}

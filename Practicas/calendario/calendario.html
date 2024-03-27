@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta lang="es">
+    <meta name="author" content="Gerardo Huizar Castro">
+    <meta name="description" content="Calendario">
+    <meta name="keywords" content="calendario">
+    <meta property="og:image" content="icon/IconCalendar.png">
+    <meta name="copyright" content="© 2023 ESO 3E">
+    <title>Calendario</title>
+    <!-- Recurso para el tipo de letra https://fonts.google.com/ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Recurso para los iconos de los botones https://fonts.google.com/icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Estilos -->
+    <link rel="stylesheet" type="text/css" href="calendarios.css">
+    <script src="calendario.js"></script>
+</head>
+
+<body>
+    <div id="movible" class="calendario">
+        <div class="grid">
+            <div class="colum1">
+                <div class="controles">
+                    <div>
+                        <a class="material-symbols-outlined animate-icon" onclick="retrocederMesCalendario()" title="Retroceder un mes en el calendario">
+                            arrow_back_ios
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="neon-effect">Calendario</h1>
+                    </div>
+                    <div>
+                        <a class="material-symbols-outlined animate-icon" onclick="avanzarMesCalendario()" title="Avanzar un mes en el calendario">
+                            arrow_forward_ios
+                        </a>
+                    </div>
+                </div>
+                <div class="info">
+                    <div id="mes"></div>
+                    <div id="año"></div>
+                </div>
+                <div id="calendario">
+                </div>
+            </div>
+            <div class="colum2">
+                <div class="image-container">
+                    <img id="image" src="img/Mexico.png" alt="calendario"> 
+                </div>
+            </div> 
+        </div>                
+    </div>
+    
+</body>
+
+</html>
