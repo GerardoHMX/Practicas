@@ -141,7 +141,6 @@ body {
     display: inline-block;
 }
 
-
 .text {
     padding: 0;
     display: inline-block;
@@ -152,4 +151,3 @@ body {
         typeAndDelete 4s steps(5) infinite,
         blinkCursor 0.5s step-end infinite alternate;
 }
-
