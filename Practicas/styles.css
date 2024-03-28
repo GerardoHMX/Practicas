@@ -1,12 +1,16 @@
-:root{
+:root {
   color-scheme: dark light;
-  --font-color:hsla(0, 100%, 100%, 1);
-  --background-color:hsla(240, 30%, 25%, 1);
-  --navbar-color:hsla(240, 30%, 15%, 1);  
-  --article-background:hsla(240, 30%, 15%, 1);
-  --primary-color:hsla(35, 90%, 55%, 1);
-  --primary-high-color:hsla(35, 100%, 75%, 1);
-  --secondary-color:hsla(0, 0%, 75%, 1);
+  --font-color: hsla(0, 100%, 100%, 1);
+  --background-color: hsla(240, 30%, 25%, 1);
+  --navbar-color: hsla(240, 30%, 15%, 1);
+  --article-background: hsla(240, 30%, 15%, 1);
+  --primary-color: hsla(35, 90%, 55%, 1);
+  --primary-high-color: hsla(35, 100%, 75%, 1);
+  --secondary-color: hsla(0, 0%, 75%, 1);
+  --card-spacer-y: 1.5rem;
+  --card-spacer-x: 1.5rem;
+  --card-border-radius: 1em;
+  --card-border-width: 1px;
 }
 
 * {
@@ -19,7 +23,7 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: "Kode Mono", monospace;
-  
+
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -42,7 +46,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; 
+  padding: 1rem 2rem;
   background-color: var(--navbar-color);
 }
 
@@ -93,9 +97,11 @@ body {
 }
 
 .article {
-  background: var(--article-background); 
+  background: var(--article-background);
   padding: 2rem;
   border-radius: 8px;
+  width: 45rem;
+
 }
 
 .article h2 {
@@ -113,24 +119,60 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 1rem 0;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
   display: flex;
   gap: 4rem;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color); 
+  color: var(--primary-color);
   border: none;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-size: medium;
+}
+
+.link-anchor {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  font-size: small;
+  padding: 0.5rem 1rem;
+  border: 2px solid;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.link-anchor:hover {
+  transform: scale(1.1);
+  border-color: #007bff;
 }
 
 a:hover {
-  color: var(--primary-high-color); 
+  color: var(--primary-high-color);
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
   font-size: inherit !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex-container{
+  display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    gap: var(--card-spacer-y);
+}
+
+.flex-items {
+  flex: 1 1 auto;
 }
