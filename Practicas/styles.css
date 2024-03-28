@@ -28,18 +28,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-}
-
-@media (max-width: 800px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 12px;
-  }
+  min-width: 320px;
 }
 
 .navbar {
@@ -48,6 +37,7 @@ body {
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--navbar-color);
+  flex-wrap: wrap; 
 }
 
 .logo {
@@ -60,15 +50,19 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
+  margin-left: auto; 
+  margin-top: 1rem;
 }
 
 .nav-links li {
   padding: 0 1rem;
+  margin-left: auto; 
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
+  margin-left: auto; 
 }
 
 .featured-articles {
@@ -81,6 +75,8 @@ body {
   max-width: 752px;
   margin: auto;
   text-align: justify;
+  max-width: 90%;
+  margin: auto;
 }
 
 .article-category {
@@ -100,8 +96,11 @@ body {
   background: var(--article-background);
   padding: 2rem;
   border-radius: 8px;
-  width: 45rem;
-
+  /*width: 45rem;
+  width: 100%;
+  */
+  max-width: 100%;
+  max-width: 600px;
 }
 
 .article h2 {
@@ -117,11 +116,12 @@ body {
 
 .article-skills {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   padding: 1rem 0;
   color: var(--secondary-color);
-  display: flex;
-  gap: 4rem;
+  overflow: auto;
 }
 
 a {
@@ -175,4 +175,32 @@ a:hover {
 
 .flex-items {
   flex: 1 1 auto;
+}
+
+@media (max-width: 600px) {
+  .article {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    margin-top: 1rem; 
+  }
+
+  .article-skills {
+    padding: 0.5rem;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  .article-skills {
+    padding: 0.5rem;
+  }
+
+}
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
 }
