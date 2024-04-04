@@ -2,6 +2,7 @@
   color-scheme: dark light;
   --font-color: hsla(0, 100%, 100%, 1);
   --background-color: hsla(240, 30%, 25%, 1);
+  --select-color: #00d4ff;
   --navbar-color: hsla(240, 30%, 15%, 1);
   --article-background: hsla(240, 30%, 15%, 1);
   --primary-color: hsla(35, 90%, 55%, 1);
@@ -35,6 +36,9 @@ body {
 @media (max-width: 600px) {
   body {
     font-size: 12px;
+  }
+  .article-container{
+    min-width: 300px;
   }
 }
 
@@ -118,6 +122,12 @@ body {
   display: flex;
   gap: 4rem;
   justify-content: center;
+  font-weight: bold;
+}
+
+.article-skills:hover{
+  color: var(--font-color);
+  transition: var(--font-color) 0.3s ease;
 }
 
 a {
