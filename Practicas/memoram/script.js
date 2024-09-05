@@ -98,3 +98,35 @@ function destapar(id){
         }
     }
 }
+
+function cambiarColor() {
+    let root = document.documentElement;
+    let currentColor = getComputedStyle(root).getPropertyValue('--main-color').trim();
+
+    if (currentColor === '#ff4da6') {
+        // Cambiar a azul neón
+        root.style.setProperty('--main-color', '#2E9AFE');
+        root.style.setProperty('--neon-shadow', '#2E9AFE');
+    } else {
+        // Cambiar a rosa neón
+        root.style.setProperty('--main-color', '#ff4da6');
+        root.style.setProperty('--neon-shadow', '#ff4da6');
+    }
+}
+
+function reiniciarJuego() {
+    clearInterval(tiempoRegresivoId);
+    movimientos = 0;
+    aciertos = 0;
+    timer = timerInicial;
+    temporizador = false;
+    mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+    mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+    mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
+    numeros = numeros.sort(() => (Math.random() - 0.5));
+    for (let i = 0; i <= 15; i++) {
+        let tarjeta = document.getElementById(i);
+        tarjeta.innerHTML = '';
+        tarjeta.disabled = false;
+    }
+}
